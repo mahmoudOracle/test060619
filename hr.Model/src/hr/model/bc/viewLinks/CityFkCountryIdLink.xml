@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CityFkCountryIdLink"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="hr.model.bc.associations.CityFkCountryIdAssoc">
+  <ViewLinkDefEnd
+    Name="CountriesView"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.model.bc.views.CountriesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="CountriesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.views.CountriesView.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CitiesView"
+    Cardinality="-1"
+    Owner="hr.model.bc.views.CitiesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="CitiesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.views.CitiesView.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

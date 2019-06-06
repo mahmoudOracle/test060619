@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DrivingLicense"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DRIVING_LICENSE"
+  AliasName="DrivingLicense"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl"
+  DefClass="model.shared.extensions.ExtEntityDefImpl">
+  <Attribute
+    Name="DrivingLicenseId"
+    IsNotNull="true"
+    ColumnName="DRIVING_LICENSE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DRIVING_LICENSE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DRIVING_LICENSE"/>
+  <Attribute
+    Name="DrivingLicenseType"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="DRIVING_LICENSE_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DRIVING_LICENSE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IssueDate"
+    IsNotNull="true"
+    ColumnName="ISSUE_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DRIVING_LICENSE"/>
+  <Attribute
+    Name="ExpirationDate"
+    IsNotNull="true"
+    ColumnName="EXPIRATION_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DRIVING_LICENSE"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DRIVING_LICENSE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DRIVING_LICENSE"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DRIVING_LICENSE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="DRIVING_LICENSE"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DRIVING_LICENSE"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="hr.model.bc.associations.DrivingLicenseFk1Assoc"
+    AssociationEnd="hr.model.bc.associations.DrivingLicenseFk1Assoc.Employees"
+    AssociationOtherEnd="hr.model.bc.associations.DrivingLicenseFk1Assoc.DrivingLicense"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DrivingLicensePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DRIVING_LICENSE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.DrivingLicense.DrivingLicenseId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DrivingLicenseFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DRIVING_LICENSE_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.DrivingLicense.EmployeeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

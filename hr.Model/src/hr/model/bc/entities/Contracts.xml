@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Contracts"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CONTRACTS"
+  AliasName="Contracts"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl"
+  DefClass="model.shared.extensions.ExtEntityDefImpl">
+  <Attribute
+    Name="ContractId"
+    IsNotNull="true"
+    ColumnName="CONTRACT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CONTRACTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="EmployeeId"
+    IsUnique="true"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CONTRACTS"/>
+  <Attribute
+    Name="StartDate"
+    IsNotNull="true"
+    ColumnName="START_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CONTRACTS"/>
+  <Attribute
+    Name="EndDate"
+    IsNotNull="true"
+    ColumnName="END_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CONTRACTS"/>
+  <Attribute
+    Name="BasicSalary"
+    IsNotNull="true"
+    ColumnName="BASIC_SALARY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CONTRACTS"/>
+  <Attribute
+    Name="HousingAllowance"
+    ColumnName="HOUSING_ALLOWANCE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CONTRACTS"/>
+  <Attribute
+    Name="TransportationAllowance"
+    ColumnName="TRANSPORTATION_ALLOWANCE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CONTRACTS"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CONTRACTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CONTRACTS"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CONTRACTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="CONTRACTS"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CONTRACTS"/>
+  <AccessorAttribute
+    Name="ContractExtend"
+    Association="hr.model.bc.associations.EmployeeContractExtendFk1Assoc"
+    AssociationEnd="hr.model.bc.associations.EmployeeContractExtendFk1Assoc.ContractExtend"
+    AssociationOtherEnd="hr.model.bc.associations.EmployeeContractExtendFk1Assoc.Contracts"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="hr.model.bc.associations.ContractsFk1EmployeesAssoc"
+    AssociationEnd="hr.model.bc.associations.ContractsFk1EmployeesAssoc.Employees"
+    AssociationOtherEnd="hr.model.bc.associations.ContractsFk1EmployeesAssoc.Contracts"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="EmployeeTermination"
+    Association="hr.model.bc.associations.EmployeeTerminationFk2Assoc"
+    AssociationEnd="hr.model.bc.associations.EmployeeTerminationFk2Assoc.EmployeeTermination"
+    AssociationOtherEnd="hr.model.bc.associations.EmployeeTerminationFk2Assoc.Contracts"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ContractsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CONTRACTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.Contracts.ContractId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ContractsUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CONTRACTS_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.Contracts.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ContractsFk1Employees">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CONTRACTS_FK1_EMPLOYEES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.Contracts.EmployeeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

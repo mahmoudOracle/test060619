@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AnnouncementsFk2Link"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="hr.model.bc.associations.AnnouncementsFk2Assoc">
+  <ViewLinkDefEnd
+    Name="BranchView"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.model.bc.views.BranchView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="BranchView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.views.BranchView.BranchId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="AnnouncementsView"
+    Cardinality="-1"
+    Owner="hr.model.bc.views.AnnouncementsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="AnnouncementsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.views.AnnouncementsView.BranchId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpProjects"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="EMP_PROJECTS"
+  AliasName="EmpProjects"
+  BindingStyle="OracleName"
+  RowClass="model.shared.extensions.ExtEntityImpl"
+  DefClass="model.shared.extensions.ExtEntityDefImpl">
+  <Attribute
+    Name="EmpProjectsId"
+    IsNotNull="true"
+    ColumnName="EMP_PROJECTS_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_PROJECTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ProjectId"
+    IsNotNull="true"
+    ColumnName="PROJECT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_PROJECTS"/>
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_PROJECTS"/>
+  <Attribute
+    Name="StartFrom"
+    IsNotNull="true"
+    ColumnName="START_FROM"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP_PROJECTS"/>
+  <Attribute
+    Name="EndOn"
+    ColumnName="END_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP_PROJECTS"/>
+  <Attribute
+    Name="Comments"
+    Precision="300"
+    ColumnName="COMMENTS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedOn"
+    ColumnName="CREATED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP_PROJECTS"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedOn"
+    ColumnName="MODIFIED_ON"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP_PROJECTS"/>
+  <Attribute
+    Name="Version"
+    ColumnName="VERSION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_PROJECTS"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="hr.model.bc.associations.ProjectAdminFk2Assoc"
+    AssociationEnd="hr.model.bc.associations.ProjectAdminFk2Assoc.Employees"
+    AssociationOtherEnd="hr.model.bc.associations.ProjectAdminFk2Assoc.EmpProjects"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Projects"
+    Association="hr.model.bc.associations.ProjectAdminFk1Assoc"
+    AssociationEnd="hr.model.bc.associations.ProjectAdminFk1Assoc.Projects"
+    AssociationOtherEnd="hr.model.bc.associations.ProjectAdminFk1Assoc.EmpProjects"
+    Type="model.shared.extensions.ExtEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EmpProjectsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMP_PROJECTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.EmpProjects.EmpProjectsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjectAdminFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PROJECTS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJECT_ADMIN_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.EmpProjects.ProjectId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjectAdminFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJECT_ADMIN_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.EmpProjects.EmployeeId"/>
+    </AttrArray>
+  </Key>
+</Entity>

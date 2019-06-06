@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeeExitVisaFk1Link"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="hr.model.bc.associations.EmployeeExitVisaFk1Assoc">
+  <ViewLinkDefEnd
+    Name="LeaveRequestView"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.model.bc.views.LeaveRequestView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="LeaveRequestView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.views.LeaveRequestView.LeaveRequestId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EmployeeExitVisaView"
+    Cardinality="-1"
+    Owner="hr.model.bc.views.EmployeeExitVisaView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="EmployeeExitVisaView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.views.EmployeeExitVisaView.EmployeeLeaveRequestId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

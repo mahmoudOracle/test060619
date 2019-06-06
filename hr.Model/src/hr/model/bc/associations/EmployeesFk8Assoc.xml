@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesFk8Assoc"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Cars"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.model.bc.entities.Cars">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Cars"/>
+      <Attr Name="_foreignKey" Value="hr.model.bc.entities.Cars.CarsPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.Cars.CarId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Employees"
+    Cardinality="-1"
+    Owner="hr.model.bc.entities.Employees">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Employees"/>
+      <Attr Name="_foreignKey" Value="hr.model.bc.entities.Employees.EmployeesFk8"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.model.bc.entities.Employees.CarId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
